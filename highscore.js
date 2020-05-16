@@ -1,24 +1,24 @@
 var highScore = document.querySelector("#highScore");
 var clear = document.querySelector("#clear");
-var goBack = document.querySelector("#goBack");
+var home = document.querySelector("#home");
 
 clear.addEventListener("click", function (){
     localStorage.clear();
     location.reload();
 });
 
-var allScores = localStorage.getItem("allScores");
-allScores = JSON.parse(allScores);
+var scoreLi = localStorage.getItem("allScores");
+scoreLi = JSON.parse(scoreLi);
 
-if (allScores !== null) {
-    for (var i = 0; i < allScores.length; i++) {
+if (scoreLi !== null) {
+    for (var i = 0; i < scoreLi.length; i++) {
         var createLi = document.createElement("li");
-        createLi.textContent = allScores[i].initials + " " + allScores[i].score;
+        createLi.textContent = scoreLi[i].initials + " " + scoreLi[i].score;
         highScore.appendChild(createLi);
 
     }
 }
 
-goBack.addEventListener("click", function() {
-    window.location.replace("./index.html")
+home.addEventListener("click", function() {
+    window.location.replace("./index.html");
 });

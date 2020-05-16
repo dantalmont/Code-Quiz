@@ -3,28 +3,30 @@
 }
 #wrapper {
     position: absolute;
-    left: 30%;
-    top: 20%;
-    width: 500px;
-    height: 500px;
+    left: 27%;
+    top: 23%;
+    width: 523px;
+    height: 350px;
     border: 1px solid rgb(119, 163, 221);
 }
-#startTime {
+#start{
     background-color: rgb(119, 163, 221);
-    margin-left: 33%;
+    margin-left: 27%;
     padding: 15px 32px;
-    font-size: 20px;
+    font-size: 25px;
     color: white;
 }
 #questionsDiv {
-    margin: 20px;
+    padding: 20px;
+    margin-top: 50px;
 }
 
 #currentTime {
     float: right;
+    padding: 1em;
 }
 
-#goBack {
+#home {
     background-color: rgb(119, 163, 221);;
     position: relative;
     padding: 10px;
@@ -59,7 +61,7 @@ textarea {
     margin: 20px;
 }
 
-#Submit {
+#confirmInitials {
     background-color: rgb(119, 163, 221);;
     margin-left: 33%;
     padding: 15px 32px;
@@ -67,9 +69,6 @@ textarea {
     color: white;
 }
 
-label {
-    margin-right: 10px;
-}
 input {
     margin-bottom: 20px;
     width: 50%;
@@ -94,50 +93,3 @@ li {
     border-top: 1px solid lightgray;
 }
 
-/* Start media queries */
-/* A Media Query max-width: 786px */
-@media screen and (max-width: 786px) {
-/* Resized content to fit 786px  */
-body {
-    max-width: 786px;
-}
-/* Resized main-content to fit 786px  */
-#wrapper {
-position: absolute;
-left: 20%;
-}
-
-a {
-margin-left: 20%;
-}
-#goBack {
-    
-    position: relative;
-    left: 55%;
-}
-
-#clear {
-    
-    position: relative;
-    right: 5%;
-    
-}
-}
-
-/* A Media Query max-width: 640px */
-@media screen and (max-width: 640px) {
-/* Resized content to fit 640px  */
-body {
-    min-width: 640px;
-}
-/* Resized main-content to fit 640px  */
-#wrapper {
-position: absolute;
-left: 10%;
-}
-a {
-  margin-left: 10%;
-}
-
-
-}

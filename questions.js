@@ -1,4 +1,16 @@
-//questions variables from .gif example
+// declare variables
+var score = 0;
+var questionIndex = 0;
+var currentTime = document.querySelector("#currentTime");
+var timer = document.querySelector("#start");
+var questionsDiv = document.querySelector("#questionsDiv");
+var wrapper = document.querySelector("#wrapper");
+var secondsLeft = 90;
+var holdInterval = 0;
+var penalty = 10;
+var generateQuestion = document.createElement("ul");
+
+
 var questions = [
     {
         title: "Commonly used data types DO NOT include:",
@@ -28,21 +40,6 @@ var questions = [
 
 ];
 
-// other variables
-var score = 0;
-var questionIndex = 0;
-
-
-var currentTime = document.querySelector("#currentTime");
-var timer = document.querySelector("#startTime");
-var questionsDiv = document.querySelector("#questionsDiv");
-var wrapper = document.querySelector("#wrapper");
-
-var secondsLeft = 90;
-var holdInterval = 0;
-var penalty = 10;
-var ulCreate = document.createElement("ul");
-
 //functions
 timer.addEventListener("click", function () {
     if (holdInterval === 0) {
@@ -52,17 +49,17 @@ timer.addEventListener("click", function () {
 
             if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
-                allDone();
+                finish();
                 currentTime.textContent = "Time's up!";
             }
         }, 1000);
     }
-    render(questionIndex);
+    generate(questionIndex);
 });
 
-function render(questionIndex) { 
+function generate(questionIndex) { 
     questionsDiv.innerHTML = "";
-    ulCreate.innerHTML = "";
+    generateQuestion.innerHTML = "";
     for (var i = 0; i < questions.length; i++) {
         var userQuestion = questions[questionIndex].title;
         var userChoices = questions[questionIndex].choices;
@@ -71,8 +68,8 @@ function render(questionIndex) {
     userChoices.forEach(function (newItem) {
         var listItem = document.createElement("li");
         listItem.textContent = newItem;
-        questionsDiv.appendChild(ulCreate);
-        ulCreate.appendChild(listItem);
+        questionsDiv.appendChild(generateQuestion);
+        generateQuestion.appendChild(listItem);
         listItem.addEventListener("click", (compare));
     })
 }
@@ -95,59 +92,59 @@ function compare(event) {
     questionIndex++;
 
     if (questionIndex >= questions.length) {
-        allDone();
+        finish();
         createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questions.length + " Correct!";
     } else {
-        render(questionIndex);
+        generate(questionIndex);
     }
     questionsDiv.appendChild(createDiv);
 
 }
-function allDone() {
+function finish() {
     questionsDiv.innerHTML = "";
     currentTime.innerHTML = "";
 
     var createH1 = document.createElement("h1");
     createH1.setAttribute("id", "createH1");
-    createH1.textContent = "All Done!"
+    createH1.textContent = "Results"
 
     questionsDiv.appendChild(createH1);
 
-    var createP = document.createElement("p");
-    createP.setAttribute("id", "createP");
+    var finalScoreEl = document.createElement("p");
+    finalScoreEl.setAttribute("id", "finalScoreEl");
 
-    questionsDiv.appendChild(createP);
+    questionsDiv.appendChild(finalScoreEl);
 
     if (secondsLeft >= 0) {
         var timeRemaining = secondsLeft;
         var createP2 = document.createElement("p");
         clearInterval(holdInterval);
-        createP.textContent = "Your final score is: " + timeRemaining;
+        finalScoreEl.textContent = "Your final score is: " + timeRemaining;
 
         questionsDiv.appendChild(createP2);
     }
 
-    var createLabel = document.createElement("label");
-    createLabel.setAttribute("id", "createLabel");
-    createLabel.textContent = "Enter your initials: ";
+    var userInitials = document.createElement("label");
+    userInitials.setAttribute("id", "createLabel");
+    userInitials.textContent = "Enter your initials: ";
 
-    questionsDiv.appendChild(createLabel);
-    var createInput = document.createElement("input");
-    createInput.setAttribute("type", "text");
-    createInput.setAttribute("id", "initials");
-    createInput.textContent = "";
+    questionsDiv.appendChild(userInitials);
+    var userInput = document.createElement("input");
+    userInput.setAttribute("type", "text");
+    userInput.setAttribute("id", "initials");
+    userInput.textContent = "";
 
-    questionsDiv.appendChild(createInput);
+    questionsDiv.appendChild(userInput);
 
-    var createSubmit = document.createElement("button");
-    createSubmit.setAttribute("type", "submit");
-    createSubmit.setAttribute("id", "Submit");
-    createSubmit.textContent = "Submit";
+    var confirmInitials = document.createElement("button");
+    confirmInitials.setAttribute("type", "submit");
+    confirmInitials.setAttribute("id", "confirmInitials");
+    confirmInitials.textContent = "Submit";
 
-    questionsDiv.appendChild(createSubmit);
+    questionsDiv.appendChild(confirmInitials);
 
-    createSubmit.addEventListener("click", function () {
-        var initials = createInput.value;
+    confirmInitials.addEventListener("click", function () {
+        var initials = userInput.value;
 
         if (initials === null) {
 
