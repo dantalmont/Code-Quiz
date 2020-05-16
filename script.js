@@ -40,7 +40,7 @@ var questions = [
 
 ];
 
-//functions
+// functions
 timer.addEventListener("click", function () {
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
