@@ -17,3 +17,4 @@ key features
 
 -On the score page the user has the option to go back and take the quiz again.
 
+screenshot.png
