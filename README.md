@@ -17,4 +17,4 @@ key features
 
 -On the score page the user has the option to go back and take the quiz again.
 
-https://raw.githubusercontent.com/dantalmont/Code-Quiz/master/assets/screenshot.png
+![screenshot](https://user-images.githubusercontent.com/62626932/82131552-5681cf80-97a4-11ea-8199-dee7b749bc29.png)
