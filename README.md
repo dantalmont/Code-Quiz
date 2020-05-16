@@ -1,5 +1,5 @@
 
-#Code Quiz Homework
+Code Quiz Homework
 ----------------------------------
 This project demonstrates a timed code quiz on JavaScript fundamentals.
 
@@ -18,3 +18,6 @@ key features
 -On the score page the user has the option to go back and take the quiz again.
 
 ![screenshot](https://user-images.githubusercontent.com/62626932/82131552-5681cf80-97a4-11ea-8199-dee7b749bc29.png)
+
+https://github.com/dantalmont/Code-Quiz
+https://dantalmont.github.io/Code-Quiz/index.html
