@@ -19,5 +19,6 @@ key features
 
 ![screenshot](https://user-images.githubusercontent.com/62626932/82131552-5681cf80-97a4-11ea-8199-dee7b749bc29.png)
 
-https://github.com/dantalmont/Code-Quiz
-https://dantalmont.github.io/Code-Quiz/index.html
+-https://github.com/dantalmont/Code-Quiz
+
+-https://dantalmont.github.io/Code-Quiz/index.html
